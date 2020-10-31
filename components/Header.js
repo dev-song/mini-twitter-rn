@@ -8,7 +8,7 @@ function Header() {
       <TextInput style={styles.input} placeholder="Search" />
       {/* More button */}
     </View>
-  )
+  );
 }
 
 const HEADER_BG_COLOR = 'dodgerblue';
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: INPUT_BG_COLOR,
-  }
-})
+  },
+});
 
 export default Header;
