@@ -1,10 +1,12 @@
 import React from 'react';
 import { TouchableHighlight, Text, StyleSheet } from 'react-native';
 
-function TabBarItem({ categoryName }) {
+function TabBarItem({ categoryName, selected }) {
   return (
-    <TouchableHighlight style={styles.item}>
-      <Text>{categoryName}</Text>
+    <TouchableHighlight style={selected ? styles.selected : styles.normal}>
+      <Text style={selected ? styles.selectedText : styles.normalText}>
+        {categoryName}
+      </Text>
     </TouchableHighlight>
   );
 }
@@ -12,14 +14,30 @@ function TabBarItem({ categoryName }) {
 const ITEM_HIGHLIGHT_COLOR = 'dodgerblue';
 
 const styles = StyleSheet.create({
-  item: {
+  selected: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderWidth: 1,
-    borderColor: ITEM_HIGHLIGHT_COLOR,
+    paddingVertical: 15,
+    borderBottomWidth: 2,
+    borderBottomColor: ITEM_HIGHLIGHT_COLOR,
+  },
+  normal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgray',
+  },
+  selectedText: {
+    fontWeight: 'bold',
+    color: ITEM_HIGHLIGHT_COLOR,
+  },
+  normalText: {
+    fontWeight: 'bold',
   }
 });
 
