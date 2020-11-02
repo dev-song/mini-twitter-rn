@@ -7,16 +7,16 @@ function SignInUpOverlay() {
   return (
     <View style={styles.overlay}>
       <View style={styles.buttonContainer}>
-        <SignInUpButton buttonName='로그인하기' />
+        <SignInUpButton buttonName="로그인하기" background="empty" />
       </View>
       <View style={styles.buttonContainer}>
-        <SignInUpButton buttonName='가입하기' />
+        <SignInUpButton buttonName="가입하기" background="filled" />
       </View>
     </View>
-  )
+  );
 }
 
-const OVERLAY_BG_COLOR = 'dodgerblue';
+const OVERLAY_BG_COLOR = 'white';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -24,16 +24,18 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
 
-    width: '100%',
-    paddingHorizontal: 5,
-    paddingVertical: 10,
     flexDirection: 'row',
+    width: '100%',
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    borderTopColor: 'lightgray',
+    borderTopWidth: 1,
     backgroundColor: OVERLAY_BG_COLOR,
   },
   buttonContainer: {
     flex: 1,
     marginHorizontal: 5,
-  }
-})
+  },
+});
 
 export default SignInUpOverlay;
